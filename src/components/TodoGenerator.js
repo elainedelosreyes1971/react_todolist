@@ -1,16 +1,11 @@
 import { useState } from "react";
 
 
-const TodoGenerator = () => {
-
-    const onInputChange = (event) => {
-        console.log(event.target.value);
-    }
-
+const TodoGenerator = ({onInputChange, onSubmitValue}) => {
     return (
         <div>
-            <input type="text" /> 
-            <button type="button">ADD</button>
+            <input type="text" onChange={onInputChange}/> 
+            <button type="button" onClick={onSubmitValue}>ADD</button>
         </div>
     )
     

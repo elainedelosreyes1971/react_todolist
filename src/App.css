@@ -39,7 +39,7 @@
   border-radius: 6px;
   font-size: 16px;
   background: #fbfbfb;
-  border: 2px solid transparent;
+  border: 5px solid transparent;
   height: 30px;
   box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%), 0 1px 1.5px 0 rgb(0 0 0 / 5%);
   :focus{

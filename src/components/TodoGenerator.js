@@ -6,7 +6,6 @@ import '../App.css';
 const TodoGenerator = (props) => {
 
     const [item, setItem] = useState('');
-    const [alertMessage, setAlertMessage] = useState("");
 
     const addTodoItem = () => {
 
@@ -17,7 +16,6 @@ const TodoGenerator = (props) => {
             setItem("");
         }
  
-     
     }
 
     return (

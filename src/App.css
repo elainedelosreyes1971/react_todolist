@@ -7,32 +7,68 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.App h1 {
+  margin-top: 100px;
+
+}
+
+
+.todoItem {
+  border: 1px solid rgb(31, 31, 31);
+  border-radius: 10px;
+  padding: 10px;
+  width: 800px;
+  margin-bottom: 10px;
+  border-width: 3px;
+}
+
+.todoGroup {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  display: inline-block;
 }
 
-.App-link {
-  color: #61dafb;
+.todoGenerator input {
+  padding: 7px;
+  border-radius: 6px;
+  font-size: 16px;
+  background: #fbfbfb;
+  border: 2px solid transparent;
+  height: 30px;
+  box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%), 0 1px 1.5px 0 rgb(0 0 0 / 5%);
+  :focus{
+      border: 2px solid #000;
+      border-radius: 4px;
+      transition: .4s;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todoGenerator button {
+  margin-left: 20px;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 6px;
+  font-size: 16px;
+  background: black;
+  color: #dddddd;
+  border: 2px solid transparent;
+  height: 40px;
+  width: 100px;
+  box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%), 0 1px 1.5px 0 rgb(0 0 0 / 5%);
 }
+
+.todoGenerator button:hover {
+  background: rgb(95, 95, 95);
+  color: black;
+  transition: .4s;
+}
+
+.todoList {
+  padding: 10em;
+  color: black;
+}
+

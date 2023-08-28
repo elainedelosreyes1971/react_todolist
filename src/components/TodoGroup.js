@@ -1,9 +1,10 @@
 import { useState } from "react";
 import TodoItem from './TodoItem';
+import '../App.css';
 
 const TodoGroup = (props) => {
     return (
-        <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <div className="todoGroup">
            {
                 props.itemList.map((item, index) => 
                 <TodoItem key={index} item={item}></TodoItem>

@@ -1,9 +1,12 @@
 import { useState } from "react";
+import '../App.css';
 
 const TodoItem = (props) => {
     return (
-        <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-         <h1>{props.item}</h1>
+        <div className="todoItem">
+
+        <span>{props.item}</span>
+         
         </div>
     );
 }

@@ -32,8 +32,12 @@
 
 .todoItem input{
   background: none;
-  border: none;
+  border: none; 
   float: left;
+  cursor: pointer;
+}
+
+.todoItem span {
   cursor: pointer;
 }
 

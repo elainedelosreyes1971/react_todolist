@@ -1,7 +1,7 @@
+import { useState } from "react";
 import { useDispatch } from 'react-redux';
 import '../App.css';
-import React, { useState } from "react";
-import { addTodoItem } from './todoListSlice';
+import { addTodoItem, doneTodoItem } from './todoListSlice';
 
 const TodoItem = (props) => {
 
@@ -15,7 +15,7 @@ const TodoItem = (props) => {
             done: isChecked,
         };
 
-        if(isChecked){
+        if (isChecked) {
             console.log(JSON.stringify(result));
             dispatch(addTodoItem(result));
         }
@@ -29,20 +29,17 @@ const TodoItem = (props) => {
         checkKey();
     };
 
-    const deleteItem = () => {
-        console.log(props.itemKey + " " + props.item + " Done: " + isChecked);
+    const deleteItem = (index) => {
+        dispatch(doneTodoItem(index));
 
     };
 
     return (
         <div className="todoItem">
-
-        <span id="selectItem" className={!isChecked ? "strikethrough" : ""}  onClick={handleCheckboxChange}> 
-            {props.item} 
-
-            <span id="delete" onClick={deleteItem}> ✖ </span>
-        </span>
-
+            <span id="selectItem" className={!isChecked ? "strikethrough" : ""} onClick={handleCheckboxChange}>
+                {props.item}
+                <span id="delete" key={props.index} onClick={() => deleteItem(props.index)}> ✖ </span>
+            </span>
         </div>
     );
 }

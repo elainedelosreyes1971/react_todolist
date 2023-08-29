@@ -8,11 +8,9 @@ const todoListSlice = createSlice({
     reducers: {
         addTodoItem: (state, action) => {
             state.todoList.push(action.payload);
-			//console.log(state.todoList.push(action.payload));
         },
         doneTodoItem: (state, action) => {
-            //update
-            
+            state.todoList.splice(action.payload);
             console.log(action);
         },
     },

@@ -5,12 +5,12 @@ function App() {
   return (
     <div className="App">
 
-    <div className="CounterGroup">
-      <h1>Todo List</h1>
-      <TodoList />
-    </div>
+      <div className="CounterGroup">
+        <h1>Todo List</h1>
+        <TodoList />
+      </div>
 
-  </div>
+    </div>
   );
 }
 

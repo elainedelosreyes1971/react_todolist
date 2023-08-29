@@ -6,11 +6,11 @@ const TodoGenerator = (props) => {
 
     const [item, setItem] = useState('');
     const addTodoItem = () => {
-    const itemTrim = item.trim();        
+        const itemTrim = item.trim();
 
-        if(itemTrim === "") {
+        if (itemTrim === "") {
             alert("No input, please add something!")
-        } else{
+        } else {
             props.onAddEvent(itemTrim);
             setItem("");
         }
@@ -18,7 +18,7 @@ const TodoGenerator = (props) => {
     return (
         <div className="todoGenerator">
             <input placeholder="Anything in mind?" value={item} onChange={event => setItem(event.target.value)} />
-            <br/> 
+            <br />
             <button onClick={addTodoItem}>ADD</button>
         </div>
     )

@@ -11,8 +11,7 @@ const TodoGroup = (props) => {
         <div className="todoGroup">
            {
                 props.itemList.map((item, index) => 
-                <TodoItem key={index} index={index} item={item} itemKey={generateKey(index)}></TodoItem>
-                
+                <TodoItem key={index} index={index} item={item} onRemoveEvent={props.onRemoveEvent} itemKey={generateKey(index)}></TodoItem>
            )}
         </div>
     );

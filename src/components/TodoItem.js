@@ -30,8 +30,13 @@ const TodoItem = (props) => {
     return (
         <div className="todoItem">
 
-        <span> <input type="checkbox" onChange={handleCheckboxChange}/> {props.item} </span>
-         
+        <span className={!isChecked ? "strikethrough" : ""}> 
+        <input type="checkbox" onChange={handleCheckboxChange}/> {props.item} 
+
+        <button id="delete"> ✖ </button>
+        </span>
+
+    
         </div>
     );
 }

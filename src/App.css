@@ -14,7 +14,6 @@
 .App h1 {
   margin-top: 100px;
   letter-spacing: 10px;
-
 }
 
 .todoItem {
@@ -24,8 +23,27 @@
   width: 400px;
   margin-bottom: 10px;
   border-width: 3px;
-   
   box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%), 0 1px 1.5px 0 rgb(0 0 0 / 5%);
+}
+
+.todoItem .strikethrough {
+  text-decoration: line-through;
+}
+
+.todoItem input{
+  background: none;
+  border: none;
+  float: left;
+  cursor: pointer;
+}
+
+.todoItem #delete {
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: black;
+  float: right;
 }
 
 .todoGroup {

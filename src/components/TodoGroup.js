@@ -11,9 +11,9 @@ const TodoGroup = (props) => {
         <div className="todoGroup">
             {
                 //TODO Remove other props that are get from item
-                props.itemList.map((item, index) =>
+                (props.isDone ? props.itemList.filter(item => item.done) : props.itemList.map((item, index) =>
                     <TodoItem key={index} index={index} item={item} onRemoveEvent={props.onRemoveEvent} itemKey={generateKey(index)}></TodoItem>
-                )}
+                ))}
         </div>
     );
 }

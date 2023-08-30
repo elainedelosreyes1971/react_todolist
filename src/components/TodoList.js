@@ -4,7 +4,7 @@ import TodoGenerator from './TodoGenerator';
 import TodoGroup from './TodoGroup';
 import { addTodoItem, removeTodoItem } from './todoListSlice';
 
-const TodoList = () => {
+const TodoList = (props) => {
 
     const todoList = useSelector(state => state.todoList.todoList);
     const dispatch = useDispatch();
@@ -19,8 +19,8 @@ const TodoList = () => {
 
     return (
         <div className="todoList">
-            <TodoGroup itemList={todoList} onRemoveEvent={removeItem} />
-            <TodoGenerator onAddEvent={addItem} />
+            <TodoGroup itemList={todoList} onRemoveEvent={removeItem} isDone={props.isDone}/>
+            {!props.isDone && <TodoGenerator onAddEvent={addItem} />}
         </div>
     );
 }

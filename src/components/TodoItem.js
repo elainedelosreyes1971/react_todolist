@@ -5,7 +5,7 @@ const TodoItem = (props) => {
 
     const [isChecked, setIsChecked] = useState(true);
 
-
+    //TODO need to craete action in redux
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };

@@ -1,12 +1,14 @@
 import { useState } from "react";
 import '../App.css';
+import * as todoApi from '../api/todoApi';
 
 const TodoItem = (props) => {
 
     const [isChecked, setIsChecked] = useState(true);
 
     //TODO need to craete action in redux
-    const handleCheckboxChange = () => {
+    const handleCheckboxChange = async () => {
+        await todoApi.updateTodoTask(props.index, { done: !isChecked });
         setIsChecked(!isChecked);
     };
 

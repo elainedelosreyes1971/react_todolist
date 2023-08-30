@@ -1,6 +1,19 @@
-.App {
-  text-align: center;
+/* .App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
+
+.App > .nav-bar > nav > ul {
+  display: flex;
+  justify-content: center;
+}
+
+.App > .nav-bar > nav > ul > li {
+  padding: 10px;
+  list-style: none;
+ } */
 
 .App-logo {
   height: 40vmin;

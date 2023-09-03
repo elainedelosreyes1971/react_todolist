@@ -1,16 +1,16 @@
 import {useState} from "react";
 import {useTodos} from "../hooks/useTodos";
-import {Button, Divider, Input} from "antd";
+import {Button, Input} from "antd";
 
 export const UpdateTodo = (props) => {
     const [item, setItem] = useState(props.item.text);
     const {updateTodo} = useTodos();
 
-    const updateItem = (id, input) => {
-        if(props.item.text !== input){
+    const updateItem = (id, text) => {
+        if (props.item.text !== text) {
             const payload = {
                 ...props.item,
-                text: input
+                text: text
             }
             updateTodo(payload);
         }
@@ -33,7 +33,7 @@ export const UpdateTodo = (props) => {
                 margin: "20px",
             }} value={item}
                    onChange={event => setItem(event.target.value)}/>
-            <br />
+            <br/>
             <Button style={{marginRight: "10px"}} onClick={() => updateItem(props.item.id, item)}> Update </Button>
             <Button onClick={props.updateModal}> Cancel </Button>
         </div>

@@ -14,8 +14,8 @@ const TodoItem = (props) => {
         <div className="todoItem">
             <span id="selectItem" className={props.item.done ? "strikethrough" : ""} onClick={handleCheckboxChange}>
                 {props.item.text}
-                <span id="delete" key={props.item.id} onClick={() => props.onRemoveEvent(props.item.id)}> ✖ </span>
             </span>
+            <span id="delete" key={props.item.id} onClick={() => props.onRemoveEvent(props.item.id)}> ✖ </span>
         </div>
     );
 }

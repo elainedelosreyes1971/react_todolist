@@ -9,7 +9,7 @@ const TodoGroup = (props) => {
         <div className="todoGroup">
             {
                 itemList.map((item) =>
-                    <TodoItem onRemoveEvent={props.onRemoveEvent} item={item}></TodoItem>
+                    <TodoItem key={item.id} onRemoveEvent={props.onRemoveEvent} item={item}></TodoItem>
                 )}
         </div>
     );

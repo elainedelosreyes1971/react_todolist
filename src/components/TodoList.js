@@ -7,7 +7,7 @@ import {useTodos} from './hooks/useTodos';
 
 const TodoList = (props) => {
 
-    const {loadTodos, addTodo} = useTodos();
+    const {loadTodos, addTodo, deleteTodo} = useTodos();
     const dispatch = useDispatch();
     useEffect(() => {
         loadTodos();
@@ -18,7 +18,7 @@ const TodoList = (props) => {
     }
 
     const removeItem = (index) => {
-
+        deleteTodo(index);
     }
 
     return (

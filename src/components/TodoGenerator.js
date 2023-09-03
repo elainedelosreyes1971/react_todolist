@@ -1,6 +1,6 @@
 import { useState } from "react";
 import '../App.css';
-
+import { Button } from "antd";
 
 const TodoGenerator = (props) => {
 
@@ -14,12 +14,13 @@ const TodoGenerator = (props) => {
             props.onAddEvent(itemTrim);
             setItem("");
         }
+        console.log(itemTrim);
     }
     return (
         <div className="todoGenerator">
             <input placeholder="Anything in mind?" value={item} onChange={event => setItem(event.target.value)} />
             <br />
-            <button onClick={addTodoItem}>ADD</button>
+            <Button onClick={addTodoItem}>ADD</Button>
         </div>
     )
 };

@@ -1,8 +1,10 @@
+import { useSelector } from 'react-redux';
 import '../App.css';
 import TodoItem from './TodoItem';
 
 const TodoGroup = (props) => {
     //TODO Generate key not needed here you can use index
+    const itemList = useSelector(state => state.todoList.todoList);
     const generateKey = (index) => {
         return (Math.random() + index);
     }
@@ -11,9 +13,9 @@ const TodoGroup = (props) => {
         <div className="todoGroup">
             {
                 //TODO Remove other props that are get from item
-                (props.isDone ? props.itemList.filter(item => item.done) : props.itemList.map((item, index) =>
-                    <TodoItem key={index} index={index} item={item} onRemoveEvent={props.onRemoveEvent} itemKey={generateKey(index)}></TodoItem>
-                ))}
+                itemList.map((item) =>
+                    <TodoItem key={item.id} item={item.text} onRemoveEvent={props.onRemoveEvent}></TodoItem>
+                )}
         </div>
     );
 }

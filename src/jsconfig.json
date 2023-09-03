@@ -1,5 +1,4 @@
 {
-
     "compilerOptions": {
 
         "module": "ES6",
@@ -8,10 +7,8 @@
 
         "jsx": "preserve",
 
-        "checkJs": true
-
+        "checkJs": true,
+        "baseUrl": "src",
     },
-
-    "exclude": ["node_modules", "**/node_modules/*"]
-
+    "exclude": ["node_modules", "**/node_modules/*"],
 }

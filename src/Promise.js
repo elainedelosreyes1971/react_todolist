@@ -1,5 +1,4 @@
 function displayOutput(output){
-    console.log(output);
 }
 
 let myPromise = new Promise(function(myResolve, myReject){

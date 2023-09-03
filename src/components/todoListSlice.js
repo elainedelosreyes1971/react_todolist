@@ -9,16 +9,8 @@ const todoListSlice = createSlice({
         resetTodoTask: (state, action) => {
             state.todoList = action.payload;
         },
-        addTodoItem: (state, action) => {
-            state.todoList.push(action.payload);
-        },
-        //TODO you can use filter in removing the todoItem
-        removeTodoItem: (state, action) => {
-            state.todoList.splice(action.payload, 1);
-        },
-        //TODO Add action for toggling item
-    },
+    }
 });
 
-export const { addTodoItem, removeTodoItem } = todoListSlice.actions;
+export const { resetTodoTask } = todoListSlice.actions;
 export default todoListSlice.reducer;

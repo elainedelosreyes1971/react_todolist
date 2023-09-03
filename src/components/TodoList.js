@@ -1,36 +1,31 @@
-import { useDispatch, useSelector } from 'react-redux';
+import {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import '../App.css';
 import TodoGenerator from './TodoGenerator';
 import TodoGroup from './TodoGroup';
-import { addTodoItem, removeTodoItem } from './todoListSlice';
-import { useEffect } from 'react';
-import * as todoApi from '../api/todoApi';
-import resetTodoTask from './todoListSlice';
+import {useTodos} from './hooks/useTodos';
 
 const TodoList = (props) => {
 
-    const todoList = useSelector(state => state.todoList.todoList);
+    // const todoList = useSelector(state => state.todoList.todoList);
+    const {loadTodos, addTodo} = useTodos();
     const dispatch = useDispatch();
     useEffect(() => {
-        async function fetchData() {
-            const response = await todoApi.getTodoTasks();
-            dispatch(resetTodoTask(response.data));
-        }
-        fetchData();
+        loadTodos();
     }, []);
 
     const addItem = (item) => {
-        dispatch(addTodoItem(item));
+        addTodo(item);
     }
 
     const removeItem = (index) => {
-        dispatch(removeTodoItem(index));
+
     }
 
     return (
         <div className="todoList">
-            <TodoGroup itemList={todoList} onRemoveEvent={removeItem} isDone={props.isDone}/>
-            {!props.isDone && <TodoGenerator onAddEvent={addItem} />}
+            <TodoGroup onRemoveEvent={removeItem} isDone={props.isDone}/>
+            {!props.isDone && <TodoGenerator onAddEvent={addItem}/>}
         </div>
     );
 }

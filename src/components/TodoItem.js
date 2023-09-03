@@ -37,7 +37,7 @@ const TodoItem = (props) => {
             </span>
                 <EditFilled style={{float: "right", marginLeft: "5px"}} id="update" key={props.item.id}
                             onClick={() => updateModal(setUpdateModalInd, updateModalInd)}/>
-                <CloseOutlined id="delete" key={props.item.id} onClick={() => deleteTodo(props.item.id)}/>
+                <CloseOutlined id="delete" key={props.item.id} onClick={() => deleteTodoItem(props.item.id)}/>
             </div>
         </div>
     );

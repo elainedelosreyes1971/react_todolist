@@ -9,7 +9,7 @@ const TodoGroup = (props) => {
         <div className="todoGroup">
             {
                 itemList.filter(item => !props.isDoneOnly || item.done).map((item) =>
-                    <TodoItem key={item.id} item={item}></TodoItem>
+                    <TodoItem key={item.id} item={item} isDoneOnly={props.isDoneOnly}></TodoItem>
                 )}
         </div>
     );

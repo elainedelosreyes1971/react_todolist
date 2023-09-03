@@ -5,7 +5,7 @@ import {UpdateTodo} from './modal/UpdateTodo';
 import {useState} from "react";
 
 const TodoItem = (props) => {
-    const {toggleTodo, deleteTodo} = useTodos();
+    const {updateTodo, deleteTodo} = useTodos();
     const [updateModalInd, setUpdateModalInd] = useState(false);
 
     const displayUpdateModal = () => {
@@ -20,8 +20,11 @@ const TodoItem = (props) => {
     }
 
     const handleCheckboxChange = () => {
-        const item = props.item;
-        toggleTodo(item.id, !item.done);
+        const payload = {
+            ...props.item,
+            done: !props.item.done
+        }
+        updateTodo(payload);
     };
 
     const deleteTodoItem = (id) => {
@@ -35,9 +38,13 @@ const TodoItem = (props) => {
             <span id="selectItem" className={props.item.done ? "strikethrough" : ""} onClick={handleCheckboxChange}>
                 {props.item.text}
             </span>
-                <EditFilled style={{float: "right", marginLeft: "5px"}} id="update" key={props.item.id}
-                            onClick={() => updateModal(setUpdateModalInd, updateModalInd)}/>
-                <CloseOutlined id="delete" key={props.item.id} onClick={() => deleteTodoItem(props.item.id)}/>
+                {!props.isDoneOnly ?
+                    <div style={{position: "relative"}}>
+                        <EditFilled style={{float: "right", marginRight: "5px", marginTop: "-15px"}} id="update" key={props.item.id}
+                                    onClick={() => updateModal(setUpdateModalInd, updateModalInd)}/>
+                        <CloseOutlined style={{float: "right", marginRight: "10px", marginTop: "-15px"}} id="delete" key={props.item.id} onClick={() => deleteTodoItem(props.item.id)}/>
+                    </div> : null
+                }
             </div>
         </div>
     );

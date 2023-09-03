@@ -1,4 +1,4 @@
-/* .App {
+.App {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -10,10 +10,10 @@
   justify-content: center;
 }
 
-.App > .nav-bar > nav > ul > li {
+.App > .nav-bar > nav > ul {
   padding: 10px;
   list-style: none;
- } */
+ }
 
 .App-logo {
   height: 40vmin;
@@ -121,7 +121,7 @@
 }
 
 .updateTodo {
-  background-color: cornflowerblue;
+  background: cornflowerblue;
 }
 
 

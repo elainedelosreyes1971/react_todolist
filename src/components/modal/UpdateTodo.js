@@ -5,8 +5,14 @@ export const UpdateTodo = (props) => {
     const [item, setItem] = useState(props.item.text);
     const {updateTodo} = useTodos();
 
-    const updateItem = (id, text) => {
-        updateTodo(id, text);
+    const updateItem = (id, input) => {
+        if(props.item.text !== input){
+            const payload = {
+                ...props.item,
+                text: input
+            }
+            updateTodo(payload);
+        }
         props.updateModal();
     }
 

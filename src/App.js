@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{padding: "25px 50px"}}>
 
       <div className="CounterGroup">
         <div className='nav-bar'>

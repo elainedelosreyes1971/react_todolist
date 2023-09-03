@@ -1,9 +1,9 @@
 import {useState} from "react";
 import '../App.css';
-import {Button} from "antd";
+import {Button, Input} from "antd";
 import {useTodos} from "./hooks/useTodos";
 
-const TodoGenerator = () => {
+const TodoGenerator = (props) => {
 
     const [item, setItem] = useState('');
     const {addTodo} = useTodos();
@@ -18,10 +18,10 @@ const TodoGenerator = () => {
         }
     }
     return (
-        <div className="todoGenerator">
-            <input placeholder="Anything in mind?" value={item} onChange={event => setItem(event.target.value)}/>
+        <div className="todoGenerator" style={{display: "block", alignItems: "center", padding: "20px"}}>
+            <Input style={{width: "400px", height: "50px", margin: "5px"}} placeholder="Anything in mind?" value={item} onChange={event => setItem(event.target.value)}/>
             <br/>
-            <Button onClick={addTodoItem}>ADD</Button>
+            <Button style={{position: "absolute", margin: "25px 0px 250px 85px"}} onClick={addTodoItem}>ADD</Button>
         </div>
     )
 };

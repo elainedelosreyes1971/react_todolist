@@ -1,20 +1,21 @@
 import {useState} from "react";
 import '../App.css';
 import {Button} from "antd";
+import {useTodos} from "./hooks/useTodos";
 
-const TodoGenerator = (props) => {
+const TodoGenerator = () => {
 
     const [item, setItem] = useState('');
+    const {addTodo} = useTodos();
     const addTodoItem = () => {
         const itemTrim = item.trim();
 
         if (itemTrim === "") {
             alert("No input, please add something!")
         } else {
-            props.onAddEvent(itemTrim);
+            addTodo(itemTrim);
             setItem("");
         }
-        console.log(itemTrim);
     }
     return (
         <div className="todoGenerator">

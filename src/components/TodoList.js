@@ -24,7 +24,7 @@ const TodoList = (props) => {
     return (
         <div className="todoList">
             <TodoGroup onRemoveEvent={removeItem} isDoneOnly={props.isDoneOnly}/>
-            {!props.isDoneOnly && <TodoGenerator onAddEvent={addItem}/>}
+            {!props.isDoneOnly && <TodoGenerator />}
         </div>
     );
 }

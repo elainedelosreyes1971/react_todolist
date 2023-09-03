@@ -19,9 +19,15 @@ export const useTodos = () => {
     }
 
     const toggleTodo = async (id, task) => {
-        console.log(task);
         await updateTodoTask(id, {
             done: task,
+        });
+        loadTodos();
+    }
+
+    const updateTodo = async (id, text) => {
+        await updateTodoTask(id, {
+            text: text,
         });
         loadTodos();
     }
@@ -35,6 +41,7 @@ export const useTodos = () => {
         loadTodos,
         addTodo,
         toggleTodo,
-        deleteTodo
+        deleteTodo,
+        updateTodo
     }
 }

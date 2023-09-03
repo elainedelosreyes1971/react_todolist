@@ -20,13 +20,13 @@ const router = createBrowserRouter([
     children: [
       { 
         index: true, 
-        element: <TodoList />
+        element: <TodoList isDoneOnly={false}/>
       },
     ]
   },
   {
     path: "/done",
-    element: <TodoList isDone={true} />
+    element: <TodoList isDoneOnly={true} />
   },
   {
     path: "/done/:id",

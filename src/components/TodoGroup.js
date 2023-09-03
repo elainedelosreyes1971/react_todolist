@@ -8,7 +8,7 @@ const TodoGroup = (props) => {
     return (
         <div className="todoGroup">
             {
-                itemList.map((item) =>
+                itemList.filter(item => !props.isDoneOnly || item.done).map((item) =>
                     <TodoItem key={item.id} onRemoveEvent={props.onRemoveEvent} item={item}></TodoItem>
                 )}
         </div>

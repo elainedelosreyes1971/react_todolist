@@ -5,7 +5,7 @@ import {UpdateTodo} from './modal/UpdateTodo';
 import {useState} from "react";
 
 const TodoItem = (props) => {
-    const {toggleTodo} = useTodos();
+    const {toggleTodo, deleteTodo} = useTodos();
     const [updateModalInd, setUpdateModalInd] = useState(false);
 
     const displayUpdateModal = () => {
@@ -24,6 +24,10 @@ const TodoItem = (props) => {
         toggleTodo(item.id, !item.done);
     };
 
+    const deleteTodoItem = (id) => {
+        deleteTodo(id);
+    }
+
     return (
         <div>
             {displayUpdateModal()}
@@ -33,7 +37,7 @@ const TodoItem = (props) => {
             </span>
                 <EditFilled style={{float: "right", marginLeft: "5px"}} id="update" key={props.item.id}
                             onClick={() => updateModal(setUpdateModalInd, updateModalInd)}/>
-                <CloseOutlined id="delete" key={props.item.id} onClick={() => props.onRemoveEvent(props.item.id)}/>
+                <CloseOutlined id="delete" key={props.item.id} onClick={() => deleteTodo(props.item.id)}/>
             </div>
         </div>
     );

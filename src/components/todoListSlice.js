@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 
 const todoListSlice = createSlice({
     name: "todoList",
@@ -12,5 +12,5 @@ const todoListSlice = createSlice({
     }
 });
 
-export const { resetTodoTask } = todoListSlice.actions;
+export const {resetTodoTask} = todoListSlice.actions;
 export default todoListSlice.reducer;

@@ -1,10 +1,11 @@
-import { useDispatch } from 'react-redux';
-import {getTodoTasks, updateTodoTask, deleteTodoTask, addTodoTask} from '../../api/todoApi';
+import {useDispatch} from 'react-redux';
+import {addTodoTask, deleteTodoTask, getTodoTasks, updateTodoTask} from '../../api/todoApi';
 import {resetTodoTask} from '../todoListSlice';
 
 export const useTodos = () => {
 
     const dispatch = useDispatch();
+
     async function loadTodos() {
         const response = await getTodoTasks();
         dispatch(resetTodoTask(response.data));

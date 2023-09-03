@@ -7,7 +7,6 @@ import {useTodos} from './hooks/useTodos';
 
 const TodoList = (props) => {
 
-    // const todoList = useSelector(state => state.todoList.todoList);
     const {loadTodos, addTodo} = useTodos();
     const dispatch = useDispatch();
     useEffect(() => {
@@ -25,7 +24,7 @@ const TodoList = (props) => {
     return (
         <div className="todoList">
             <TodoGroup onRemoveEvent={removeItem} isDone={props.isDone}/>
-            {!props.isDone && <TodoGenerator onAddEvent={addItem}/>}
+            {props.isDone && <TodoGenerator onAddEvent={addItem}/>}
         </div>
     );
 }

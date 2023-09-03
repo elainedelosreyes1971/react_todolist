@@ -1,6 +1,6 @@
-import { useState } from "react";
+import {useState} from "react";
 import '../App.css';
-import { Button } from "antd";
+import {Button} from "antd";
 
 const TodoGenerator = (props) => {
 
@@ -18,8 +18,8 @@ const TodoGenerator = (props) => {
     }
     return (
         <div className="todoGenerator">
-            <input placeholder="Anything in mind?" value={item} onChange={event => setItem(event.target.value)} />
-            <br />
+            <input placeholder="Anything in mind?" value={item} onChange={event => setItem(event.target.value)}/>
+            <br/>
             <Button onClick={addTodoItem}>ADD</Button>
         </div>
     )

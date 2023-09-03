@@ -1,22 +1,21 @@
-import { useState } from "react";
+import {useState} from "react";
 import '../App.css';
-import * as todoApi from '../api/todoApi';
+import {useTodos} from "./hooks/useTodos";
 
 const TodoItem = (props) => {
-
-    const [isChecked, setIsChecked] = useState(true);
+    const {toggleTodo} = useTodos();
 
     //TODO need to craete action in redux
-    const handleCheckboxChange = async () => {
-        await todoApi.updateTodoTask(props.index, { done: !isChecked });
-        setIsChecked(!isChecked);
+    const handleCheckboxChange = () => {
+        const item = props.item;
+        toggleTodo(item.id, !item.done);
     };
 
     return (
         <div className="todoItem">
-            <span id="selectItem" className={!isChecked ? "strikethrough" : ""} onClick={handleCheckboxChange}>
-                {props.item}
-                <span id="delete" key={props.item.id} onClick={() => props.onRemoveEvent(props.index)}> ✖ </span>
+            <span id="selectItem" className={props.item.done ? "strikethrough" : ""} onClick={handleCheckboxChange}>
+                {props.item.text}
+                <span id="delete" key={props.item.id} onClick={() => props.onRemoveEvent(props.item.id)}> ✖ </span>
             </span>
         </div>
     );

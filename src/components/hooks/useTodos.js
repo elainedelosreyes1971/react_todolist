@@ -18,8 +18,9 @@ export const useTodos = () => {
     }
 
     const toggleTodo = async (id, task) => {
+        console.log(task);
         await updateTodoTask(id, {
-            text: task,
+            done: task,
         });
         loadTodos();
     }

@@ -5,6 +5,7 @@ export const getTodoTasks = () => {
 }
 
 export const updateTodoTask = (id, todoTask) => {
+    console.log(id, todoTask);
     return api.put(`/todos/${id}`, todoTask);
 } 
 
